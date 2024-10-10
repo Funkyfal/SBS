@@ -1,0 +1,79 @@
+Order:
+--get: http://localhost:8080/my_order
+       http://localhost:8080/my_order/2
+--post http://localhost:8080/my_order
+        {
+            "delivery": false,
+            "status": "Canceled",
+            "personId": 1
+        }
+--put http://localhost:8080/my_order/3
+        {
+             "delivery": false,
+             "status": "Canceled",
+             "personId": 2
+        }
+--delete http://localhost:8080/my_order/3
+
+Good:
+--get: http://localhost:8080/good
+       http://localhost:8080/good/2
+--post http://localhost:8080/good
+       {
+         "name": "Name",
+         "shortName": "nam",
+         "description": "description",
+         "price": 52
+       }
+--put http://localhost:8080/good/6
+       {
+        "name": "ChangedName",
+        "shortName": "nam",
+        "description": "description",
+        "price": 52
+      }
+--delete http://localhost:8080/good/6
+
+Person:
+--get: http://localhost:8080/person
+       http://localhost:8080/person/2
+--post http://localhost:8080/person
+       {
+         "secondName": "SN",
+         "name": "N",
+         "middleName": "MN",
+         "city": "City",
+         "address": "Address",
+         "phoneNumber": "PhoneNumber",
+         "postCode": 220020
+       }
+--put http://localhost:8080/person/3
+       {
+        "secondName": "CSN",
+        "name": "CN",
+        "middleName": "CMN",
+        "city": "City",
+        "address": "Address",
+        "phoneNumber": "PhoneNumber",
+        "postCode": 220020
+       }
+--delete http://localhost:8080/person/3
+
+MyOrderGood:
+--get: http://localhost:8080/good/my_order
+       http://localhost:8080/good/1/my_order/1
+       http://localhost:8080/good/1/my_order
+       http://localhost:8080/my_order/1/good
+--post http://localhost:8080/good/my_order
+       {
+           "quantity": 52,
+           "myOrderId": 1,
+           "goodId": 5
+       }
+--put http://localhost:8080/good/5/my_order/1
+       {
+          "quantity": 5252,
+          "myOrderId": 1,
+          "goodId": 5
+       }
+--delete http://localhost:8080/good/5/my_order/1
